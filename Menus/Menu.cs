@@ -12,7 +12,7 @@ namespace LigaBetPlay.Menus
     {
         Torneo torneo = new Torneo();
         PartidoSimular partidoSimular = new PartidoSimular();
-        
+        Consultas consultas = new Consultas();
 
         public void Iniciar()
         {
@@ -45,11 +45,13 @@ namespace LigaBetPlay.Menus
                             break;
 
                         case 4:
-                            //tabla de posiciones
+                            consultas.MostrarTabla(torneo.Equipos);
                             break;
 
                         case 5:
-                            //estadisticas
+                            consultas.Lider(torneo.Equipos);
+                            consultas.MasGolesFavor(torneo.Equipos);
+                            consultas.MenosGolesContra(torneo.Equipos);
                             break;
                         case 6:
                             Console.WriteLine("Saliendo del programa...");
