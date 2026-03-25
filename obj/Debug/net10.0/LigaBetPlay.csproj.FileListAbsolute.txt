@@ -12,3 +12,4 @@ C:\Users\dmant\OneDrive\Documentos\proyectCshap\LigaBetPlay\obj\Debug\net10.0\re
 C:\Users\dmant\OneDrive\Documentos\proyectCshap\LigaBetPlay\obj\Debug\net10.0\LigaBetPlay.pdb
 C:\Users\dmant\OneDrive\Documentos\proyectCshap\LigaBetPlay\obj\Debug\net10.0\LigaBetPlay.genruntimeconfig.cache
 C:\Users\dmant\OneDrive\Documentos\proyectCshap\LigaBetPlay\obj\Debug\net10.0\ref\LigaBetPlay.dll
+C:\Users\dmant\OneDrive\Documentos\proyectCshap\LigaBetPlay\obj\Debug\net10.0\LigaBetPlay.sourcelink.json
