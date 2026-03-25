@@ -5,11 +5,15 @@ using System.Threading.Tasks;
 
 using LigaBetPlay.LogicgTorneo;
 
+
 namespace LigaBetPlay.Menus
 {
     public class Menu
     {
         Torneo torneo = new Torneo();
+        PartidoSimular partidoSimular = new PartidoSimular();
+        
+
         public void Iniciar()
         {
             bool opciones = true;
@@ -37,7 +41,7 @@ namespace LigaBetPlay.Menus
                             break;
 
                         case 3:
-                            //Simulacion de partidos
+                            partidoSimular.SimularPartido();
                             break;
 
                         case 4:

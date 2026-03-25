@@ -35,6 +35,9 @@ namespace LigaBetPlay.LogicgTorneo
 
         public Equipo BuscarEquipoPorIndice(int indice)
         {
+            if (indice < 0 || indice >= Equipos.Count)
+                throw new ArgumentOutOfRangeException(nameof(indice), "Índice de equipo fuera de rango");
+
             return Equipos[indice];
         }
     }
