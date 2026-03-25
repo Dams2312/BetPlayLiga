@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using LigaBetPlay.LogicgTorneo;
+
 namespace LigaBetPlay.Menus
 {
     public class Menu
     {
+        Torneo torneo = new Torneo();
         public void Iniciar()
         {
             bool opciones = true;
@@ -26,11 +29,11 @@ namespace LigaBetPlay.Menus
                     switch (opcion)
                     {
                         case 1:
-                            //Registro de Torneos
+                            torneo.RegistrarEquipo();
                             break;
 
                         case 2:
-                            //Lista de equipos
+                            torneo.ListarEquipos();
                             break;
 
                         case 3:
