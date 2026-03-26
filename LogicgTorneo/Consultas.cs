@@ -163,5 +163,102 @@ namespace LigaBetPlay.LogicgTorneo
                 Console.WriteLine(e.Nombre);
         }
 
+        //Buscar nombre de equipo
+        public void BuscarEquipo(List<Equipo> equipos, string nombre)
+        {
+            var equipo = equipos
+                .FirstOrDefault(e => e.Nombre.ToLower() == nombre.ToLower());
+
+            if (equipo != null)
+            {
+                Console.WriteLine($"\nEncontrado: {equipo.Nombre} {equipo.Puntos} pts");
+            }
+            else
+            {
+                Console.WriteLine("No existe");
+            }
+        }
+
+        // promedio goles a favor
+        public void PromedioGF(List<Equipo> equipos)
+        {
+            double promedio = equipos.Average(e => e.GF);
+
+            Console.WriteLine($"\nPromedio goles a favor: {promedio}");
+        }
+
+        // promedio goles en contra
+        public void PromedioGC(List<Equipo> equipos)
+        {
+            double promedio = equipos.Average(e => e.GC);
+
+            Console.WriteLine($"\nPromedio goles en contra: {promedio}");
+        }
+
+        // total goles
+        public void TotalGoles(List<Equipo> equipos)
+        {
+            int total = equipos.Sum(e => e.GF);
+
+            Console.WriteLine($"\nTotal goles torneo: {total}");
+        }
+
+        //Total Puntos
+        public void TotalPuntos(List<Equipo> equipos)
+        {
+            int total = equipos.Sum(e => e.Puntos);
+
+            Console.WriteLine($"\nTotal puntos torneo: {total}");
+        }
+
+         // tabla personalizada 
+        public void TablaSimple(List<Equipo> equipos)
+        {
+            var lista = TablaOrdenada(equipos);
+
+            Console.WriteLine("\nTabla simple:");
+
+            foreach (var e in lista)
+                Console.WriteLine($"{e.Nombre} {e.Puntos}");
+        }
+
+        // por debajo del promedio de puntos
+        public void BajoPromedioPuntos(List<Equipo> equipos)
+        {
+            double promedio = equipos.Average(e => e.Puntos);
+
+            var lista = equipos.Where(e => e.Puntos < promedio);
+
+            Console.WriteLine("\nDebajo del promedio:");
+
+            foreach (var e in lista)
+                Console.WriteLine(e.Nombre);
+        }
+
+          // ranking simple numerado
+        public void RankingSimple(List<Equipo> equipos)
+        {
+            var lista = TablaOrdenada(equipos);
+
+            Console.WriteLine("\nRanking:");
+
+            int pos = 1;
+
+            foreach (var e in lista)
+            {
+                Console.WriteLine($"{pos}. {e.Nombre}");
+                pos++;
+            }
+        }
+
+        // estadísticas destacadas
+        public void Destacados(List<Equipo> equipos)
+        {
+            Lider(equipos);
+            MasGolesFavor(equipos);
+            MenosGolesContra(equipos);
+            MasGanados(equipos);
+        }
+
     }
 }

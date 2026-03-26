@@ -30,7 +30,6 @@ namespace LigaBetPlay.LogicgTorneo
                 Console.WriteLine($"{i + 1}. {Equipos[i].Nombre}");
             }
 
-            Console.WriteLine();
         }
 
         public Equipo BuscarEquipoPorIndice(int indice)
