@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using LigaBetPlay.LogicgTorneo;
+using LigaBetPlay.Menus;
 
 
 namespace LigaBetPlay.Menus
@@ -13,6 +14,8 @@ namespace LigaBetPlay.Menus
         Torneo torneo = new Torneo();
         PartidoSimular partidoSimular = new PartidoSimular();
         Consultas consultas = new Consultas();
+
+        SubMenus subMenus = new SubMenus();
 
         public void Iniciar()
         {
@@ -49,9 +52,7 @@ namespace LigaBetPlay.Menus
                             break;
 
                         case 5:
-                            consultas.Lider(torneo.Equipos);
-                            consultas.MasGolesFavor(torneo.Equipos);
-                            consultas.MenosGolesContra(torneo.Equipos);
+                            subMenus.SubmenuConsultas();
                             break;
                         case 6:
                             Console.WriteLine("Saliendo del programa...");
