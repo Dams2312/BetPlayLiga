@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 using LigaBetPlay.LogicgTorneo;
 using LigaBetPlay.Menus;
+using LigaBetPlay.PermanenciData;
 
 
 namespace LigaBetPlay.Menus
@@ -16,6 +17,8 @@ namespace LigaBetPlay.Menus
         Consultas consultas = new Consultas();
 
         SubMenus subMenus = new SubMenus();
+
+        ReadWriteJson readWriteJson = new ReadWriteJson();
 
         public void Iniciar()
         {
@@ -48,7 +51,8 @@ namespace LigaBetPlay.Menus
                             break;
 
                         case 4:
-                            consultas.MostrarTabla(torneo.Equipos);
+                            var equipos = readWriteJson.LeerEquipos();
+                            consultas.MostrarTabla(equipos);
                             break;
 
                         case 5:
